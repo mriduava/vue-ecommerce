@@ -1,6 +1,10 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
+import Admin from "./views/Admin.vue";
+import Men from "./sections/Men.vue";
+import Women from "./sections/Women.vue";
+import Kids from "./sections/Kids.vue";
 
 Vue.use(Router);
 
@@ -12,6 +16,26 @@ export default new Router({
       path: "/",
       name: "home",
       component: Home
+    },
+    {
+      path: "/admin",
+      name: "admin",
+      component: Admin
+    },
+    {
+      path: "/men",
+      name: "men",
+      component: Men
+    },
+    {
+      path: "/women",
+      name: "women",
+      component: Women
+    },
+    {
+      path: "/kids",
+      name: "kids",
+      component: Kids
     },
     {
       path: "/about",
