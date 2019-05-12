@@ -24,7 +24,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link">SIGN IN</a>
+                <router-link class="nav-link" to="/login">SIGN IN</router-link>
             </li>
             </ul>
         </div>

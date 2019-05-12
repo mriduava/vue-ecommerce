@@ -19,6 +19,9 @@ Vue.component('NavBar', require('./components/NavBar').default);
 
 Vue.config.productionTip = false;
 
+const eventBus = new Vue();
+Vue.prototype.$eventBust = eventBus;
+
 new Vue({
   router,
   store,

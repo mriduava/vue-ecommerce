@@ -5,6 +5,8 @@ import Admin from "./views/Admin.vue";
 import Men from "./sections/Men.vue";
 import Women from "./sections/Women.vue";
 import Kids from "./sections/Kids.vue";
+import LogIn from "./user/LogIn.vue";
+import ManDetails from "./shop/ManDetails.vue";
 
 Vue.use(Router);
 
@@ -25,8 +27,21 @@ export default new Router({
     {
       path: "/men",
       name: "men",
-      component: Men
+      component: Men,
+      // redirect: {path: "/men/dispproduct"},
+      children: [
+        // {
+        //   path: "men/:menid",
+        //   name: "dispproduct",
+        //   component: DispProduct
+        // }
+      ]
     },
+    {
+      path: "/men/:manid",
+      name: "mandetails",
+      component: ManDetails
+    },   
     {
       path: "/women",
       name: "women",
@@ -36,6 +51,11 @@ export default new Router({
       path: "/kids",
       name: "kids",
       component: Kids
+    },
+    {
+      path: "/login",
+      name: "login",
+      component: LogIn
     },
     {
       path: "/about",
