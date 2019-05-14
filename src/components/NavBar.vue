@@ -19,6 +19,10 @@
                 <router-link class="nav-link" to="/kids">KIDS</router-link>
             </li>
 
+             <li class="nav-item">
+                <router-link to="/cart" class="nav-link">CART</router-link>
+            </li>
+
             <li class="nav-item">
                 <router-link to="/about" class="nav-link">ABOUT</router-link>
             </li>
@@ -45,7 +49,6 @@ export default {
   src: url('../../public/fonts/movu.otf');
 }
 .navbar {
-//   padding: 20px;
   z-index: 10;
   background: transparent;
   .navbar-brand{

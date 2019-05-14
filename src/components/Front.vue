@@ -2,12 +2,12 @@
     <div class="container-fluid h-70 px-0" id="#front">
       <div class="row h-100 justify-content-center align-items-center">
 
-        <div class="col-md-10 ml-3 mt-2">
+        <div class="col-md-10 ml-1 mt-2">
             <h1 class="front-title">
               Happiness is...
             </h1>
-            <p>
-              Receiving what you order online.
+            <p class="front-text">
+              receiving what you order online.
             </p>
             <div class="shop-btn mb-3">
                 <button class="btn custom-btn">Shop Online</button>
@@ -32,6 +32,10 @@ name: "Front",
 </script>
 
 <style scoped lang="scss">
+@font-face {
+  font-family: Eternal;
+  src: url('../../public/fonts/eternal.ttf');
+}
   .container-fluid{
     background-image: url("../../public/img/fashion.jpg");
     background-size: cover;
@@ -41,6 +45,19 @@ name: "Front",
     height: 100vh;
     text-align: left;
     overflow: hidden;
+    .front-title{
+      margin-left: 5%;
+      color: #e84393;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+      font-family: Eternal;
+      font-size: 8rem;
+    }
+    .front-text,
+    & .shop-btn{
+      color:#f368e0;
+      margin-left: 2%;
+      font-size: 1.6rem;
+    }
     .btn{
       color: #f368e0;
       border: 1px solid #e84393;

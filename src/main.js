@@ -1,7 +1,7 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
-import store from "./store";
+import {store} from "./store";
 import "./registerServiceWorker";
 import jQuery from 'jquery'; 
 
@@ -19,8 +19,10 @@ Vue.component('NavBar', require('./components/NavBar').default);
 
 Vue.config.productionTip = false;
 
-const eventBus = new Vue();
-Vue.prototype.$eventBust = eventBus;
+window.eventBus = new Vue()
+// export const eventBus = new Vue();
+// export default eventBus;
+// Vue.prototype.$eventBus = eventBus;
 
 new Vue({
   router,
