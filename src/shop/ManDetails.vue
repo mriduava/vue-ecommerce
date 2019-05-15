@@ -1,31 +1,46 @@
 <template>
  <div class="container-fluid pl-5 pr-5 mxl-md-5 mr-md-5">
    <div class="row">
-     <div class="col-lg-10 mx-auto">
-      <div class="card flex-row flex-wrap f-cont">
+     <div class="col-lg-12 mx-auto">
+      <div class="card">
+        <div class="row">
+         <div class="col-lg-2">
+            
+        </div>
+        <div class="col-lg-3 my-md-2">
         <div class="card-header border-1">
             <img style="width:100%" :src="product.thumbnail">
         </div>
-        <div class="card-block p-3">
+        </div>
+
+        <div class="col-lg-3 m-0">
+        <div class="card-block pt-2 pl-0">
             <h3 class="card-title text-secondary"> {{product.title}} </h3>
             <p class="card-text"> {{product.summary}} </p>
             <h5 class="text-info">Price: {{product.price}} </h5>
-             <label for="quantity">Quantity</label>
+             <label class="text-secondary" for="quantity">Quantity</label>
             <input name="quantity" min="1" type="number" class="quantity" v-model="quantity">
             <button class="btn btn-success btn-sm" @click="addToCart()">ADD TO BAG</button>
-            <p>
-              <router-link to="/men">CONTINUE SHOPPING</router-link>
-            </p>
+                   
+          <div class="mt-3">     
+            <router-link to="/men" class="btn btn-outline-info btn-sm"><i class="fa fa-angle-left"></i> Continue Shopping</router-link>
+            <router-link to="/cart" class="btn btn-outline-info btn-sm ml-3"> Shopping Cart <i class="fa fa-angle-right"></i></router-link>
+          </div> 
+          </div>
+        </div>
+
+        <div class="col-lg-4 ml-4">
+
+        </div>
+
+
         </div>
         <div class="w-100"></div>
-        <!-- <div class="card-footer w-100 text-muted">
-            FOOTER
-        </div> -->
+            
+        </div>
      </div>
      </div>
    </div>
-
- </div>
 </template>
 
 <script>
@@ -48,8 +63,7 @@ export default {
   data () {
     return {
       product: {},
-      quantity: 1,
-      sendData: []
+      quantity: 1
     }
   },
   created () {
@@ -73,7 +87,7 @@ export default {
         // this.$emit('cart-item', item);
         // this.sendData.push(item)
         this.$store.state.sendData.push(item)
-        console.log(this.sendData);
+        console.log(item);
     },
     getStory(slug, version) {
       storyapi.get('cdn/stories/' + this.$route.params.manid, {
@@ -99,13 +113,19 @@ export default {
 
 <style lang="scss" scoped>
 .card-header{
-  height: 420px;
+  // width: 100%;
+  // height: 560px;
   overflow: hidden;
+}
+
+.card-block .card-text{
+  white-space: pre-wrap;
+  word-break: normal;
 }
 
 .quantity{
   width: 50px;
-  padding: 0.5%;
+  padding: 0.2%;
   margin: 4%;
 }
 

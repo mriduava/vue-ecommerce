@@ -20,7 +20,7 @@
             </li>
 
              <li class="nav-item">
-                <router-link to="/cart" class="nav-link">CART</router-link>
+                <router-link to="/cart" class="nav-link"><i class="fas fa-cart-plus"> <span class="itemNumber" id="itemCount"> {{countItems}} </span></i></router-link>
             </li>
 
             <li class="nav-item">
@@ -38,7 +38,13 @@
 </template>
 
 <script>
+import {store} from '../store.js'
 export default {
+    computed: {
+        countItems() {
+            return this.$store.state.sendData.length
+        }
+    }
 
 }
 </script>
@@ -62,6 +68,19 @@ export default {
       color: #e83e8c;
     }
   }
+  .itemNumber{
+    //   position: absolute;
+      font-size: 1.4rem;
+      background: #e83e8c;
+      width: 30px;
+      height: 30px;
+      padding-right: 10%;
+      margin: 5%;
+      color: aliceblue;
+      border-radius: 50%;
+      text-align: center;
+  }
+
 }
 
 </style>

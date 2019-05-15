@@ -4,11 +4,11 @@
 	<table id="cart" class="table table-hover table-condensed">
         <thead>
             <tr>
-                <th style="width:50%">Product</th>
+                <th style="width:40%">Product</th>
                 <th style="width:10%">Price</th>
                 <th style="width:8%">Quantity</th>
-                <th style="width:22%" class="text-center">Subtotal</th>
-                <th style="width:10%"></th>
+                <th style="width:18%" class="text-center">Subtotal</th>
+                <th style="width:15%"></th>
             </tr>
         </thead>
    
@@ -20,30 +20,29 @@
                         <div class="col-sm-2 hidden-xs"><img :src="item.thumbnail" alt="..." class="img-responsive w-100"/></div>
                         <div class="col-sm-10">
                             <h4 class="nomargin">{{item.title}}</h4>
-                            <p>{{item.summary}}</p>
+                            <p>{{item.summary.substring(0, 60)}}</p>
                         </div>
                     </div>
                 </td>
                 <td data-th="Price">{{item.price}} </td>
                 <td data-th="Quantity">
-                    <input type="number" class="form-control text-center" value="1">
+                    <input name="quantity" min="1" type="number" class="quantity" v-model="quantity">
                 </td>
                 <td data-th="Subtotal" class="text-center">{{item.price}}</td>
                 <td class="actions" data-th="">
                     <button class="btn btn-info btn-sm"><i class="fa fa-sync"></i></button>
-                    <button class="btn btn-danger btn-sm"><i class="fas fa-minus-square"></i></button>								
+                    <button class="btn btn-danger btn-sm px-2 mx-3"><i class="fas fa-minus-square"></i></button>								
                 </td>
             </tr>
-           
         </tbody>
       
   
         <tfoot>
             <tr>
-                <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+                <td><router-link to="/men" class="btn btn-outline-info btn-sm"><i class="fa fa-angle-left"></i> Continue Shopping</router-link></td>
                 <td colspan="2" class="hidden-xs"></td>
                 <td class="hidden-xs text-center"><strong>Total </strong></td>
-                <td><router-link to="/" class="btn btn-success">Checkout<i class="fas fa-angle-right"></i></router-link></td>
+                <td><router-link to="/" class="btn btn-success btn-sm px-4">Checkout <i class="fas fa-angle-right"></i></router-link></td>
             </tr>
         </tfoot>
  
@@ -61,11 +60,11 @@ export default {
     components: {
         ManDetails
     },
-    // data() {
-    //     return {
-    //         cartList: ['hi']
-    //     }
-    // }
+    data() {
+        return {
+            quantity: 1
+        }
+    },
     // created(){
     //     eventBus.$on('cart-item', item => {
     //         this.cartList.push(item);       
@@ -78,6 +77,14 @@ export default {
         dataItems() {
             return this.$store.getters.dataItems;
         }
+        // total() {
+        //     let total = 0;
+        //     for(let i=0; i<this.dataItems.length; i++){
+        //         let item = dataItems[i];
+        //         total += item.quantity*item.price
+        //     }
+        //     return total;
+        // }
     }
     
 }
@@ -105,12 +112,22 @@ export default {
 		float:right;
 	}
 	
-	table#cart thead { display: none; }
-	table#cart tbody td { display: block; padding: .6rem; min-width:320px;}
-	table#cart tbody tr td:first-child { background: #333; color: #fff; }
+	table#cart thead { 
+        display: none; 
+        }
+	table#cart tbody td { 
+        display: block; 
+        padding: .6rem; 
+        min-width:320px;}
+	table#cart tbody tr td:first-child { 
+        background: #333; 
+        color: #fff; 
+        }
 	table#cart tbody td:before {
-		content: attr(data-th); font-weight: bold;
-		display: inline-block; width: 8rem;
+		content: attr(data-th); 
+        font-weight: bold;
+		display: inline-block; 
+        width: 8rem;
 	}
 	
 	table#cart tfoot td{
