@@ -19,7 +19,7 @@
             <p class="card-text"> {{product.summary}} </p>
             <h5 class="text-info">Price: {{product.price}} </h5>
              <label class="text-secondary" for="quantity">Quantity</label>
-            <input name="quantity" min="1" type="number" class="quantity" v-model="quantity">
+            <input name="quantity" min="1" type="number" class="quantity" v-model="product.quantity">
             <button class="btn btn-success btn-sm" @click="addToCart()">ADD TO BAG</button>
                    
           <div class="mt-3">     
@@ -62,8 +62,8 @@ export default {
   },
   data () {
     return {
-      product: {},
-      quantity: 1
+      product: {}
+      // quantity: 1
     }
   },
   created () {

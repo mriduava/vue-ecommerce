@@ -24,13 +24,13 @@
                         </div>
                     </div>
                 </td>
-                <td data-th="Price">{{item.price}} </td>
+                <td data-th="Price">{{item.price}} kr</td>
                 <td data-th="Quantity">
-                    <input name="quantity" min="1" type="number" class="quantity" v-model="quantity">
+                    <input name="quantity" min="1" type="number" class="quantity px-2" v-model="item.quantity">
                 </td>
-                <td data-th="Subtotal" class="text-center">{{item.price}}</td>
+                <td data-th="Subtotal" class="text-center">{{(item.price*item.quantity).toFixed(2)}} kr</td>
                 <td class="actions" data-th="">
-                    <button class="btn btn-info btn-sm"><i class="fa fa-sync"></i></button>
+                    <!-- <button class="btn btn-info btn-sm"><i class="fa fa-sync"></i></button> -->
                     <button class="btn btn-danger btn-sm px-2 mx-3"><i class="fas fa-minus-square"></i></button>								
                 </td>
             </tr>
@@ -41,8 +41,8 @@
             <tr>
                 <td><router-link to="/men" class="btn btn-outline-info btn-sm"><i class="fa fa-angle-left"></i> Continue Shopping</router-link></td>
                 <td colspan="2" class="hidden-xs"></td>
-                <td class="hidden-xs text-center"><strong>Total </strong></td>
-                <td><router-link to="/" class="btn btn-success btn-sm px-4">Checkout <i class="fas fa-angle-right"></i></router-link></td>
+                <td class="hidden-xs text-center"><strong> {{total.toFixed(2)}} kr</strong></td>
+                <td><router-link to="/cart/checkout" class="btn btn-success btn-sm px-4">Checkout <i class="fas fa-angle-right"></i></router-link></td>
             </tr>
         </tfoot>
  
@@ -60,11 +60,11 @@ export default {
     components: {
         ManDetails
     },
-    data() {
-        return {
-            quantity: 1
-        }
-    },
+    // data() {
+    //     return {
+    //         quantity: 1
+    //     }
+    // },
     // created(){
     //     eventBus.$on('cart-item', item => {
     //         this.cartList.push(item);       
@@ -76,15 +76,15 @@ export default {
         },
         dataItems() {
             return this.$store.getters.dataItems;
+        },
+        total() {
+            let total = 0;
+            for(let i=0; i<this.$store.getters.dataItems.length; i++){
+                let item = this.$store.getters.dataItems[i];
+                total += item.quantity*item.price
+            }
+            return total;
         }
-        // total() {
-        //     let total = 0;
-        //     for(let i=0; i<this.dataItems.length; i++){
-        //         let item = dataItems[i];
-        //         total += item.quantity*item.price
-        //     }
-        //     return total;
-        // }
     }
     
 }
@@ -94,6 +94,10 @@ export default {
 .table>tbody>tr>td, 
 .table>tfoot>tr>td{
     vertical-align: middle;
+}
+.quantity{
+    width: 60px;
+    height: 30px;
 }
 @media screen and (max-width: 600px) {
     table#cart tbody td .form-control{

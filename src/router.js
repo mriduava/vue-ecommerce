@@ -8,6 +8,7 @@ import Kids from "./sections/Kids.vue";
 import LogIn from "./user/LogIn.vue";
 import ManDetails from "./shop/ManDetails.vue";
 import Cart from "./shop/Cart.vue";
+import Checkout from "./shop/Checkout.vue";
 
 Vue.use(Router);
 
@@ -57,6 +58,11 @@ export default new Router({
       path: "/cart",
       name: "cart",
       component: Cart
+    },
+    {
+      path: "/cart/checkout",
+      name: "checkout",
+      component: Checkout
     },
     {
       path: "/login",
