@@ -1,7 +1,7 @@
 <template>
  <div class="container-fluid pl-5 pr-5 mxl-md-5 mr-md-5">
    <div class="row">
-    <div class="col-lg-3 col-md-4 col-sm-6" v-for="woman in story" :key="woman.id">
+    <div class="col-lg-3 col-md-4 col-sm-6" v-for="woman in storyData" :key="woman.id">
       <div class="card">
         <div class="pro-img">
            <img :src="woman.content.thumbnail" class="card-img-top croped" alt="mridufashion">
@@ -23,6 +23,7 @@
 
 <script>
 import StoryblokClient from 'storyblok-js-client'
+import axios from "axios";
 import { log } from 'util';
 const token = 'vzwC59CqmD9irvJTGSQVKAtt';
 let storyapi = new StoryblokClient({
@@ -30,43 +31,57 @@ let storyapi = new StoryblokClient({
 }) 
 export default {
   name: 'Women',
-  data () {
-    return {
-      msg: 'Women Collections',
-      story: { }
-    }
+  // data () {
+  //   return {
+  //     msg: 'Women Collections',
+  //     story: { }
+  //   }
+  // },
+  computed: {
+    storyData(){
+      return this.$store.getters.allStoryData;
+    }    
   },
-    created () {
-    window.storyblok.init({
-      accessToken: token
-    })
-    window.storyblok.on('change', () => {
-      this.getStory('women', 'draft')
-    })
-    window.storyblok.pingEditor(() => {
-      if (window.storyblok.isInEditor()) {
-        this.getStory.filter('women', 'draft')
-      } else {
-        this.getStory('women', 'draft')
-      }
-    })
-  },
-    methods: {
-    getStory(slug, version) {
-      storyapi.get('cdn/stories/', {
-        version: 'draft',
-        starts_with: 'women/'
-      })
-      .then((response) => {
-        console.log(response.data.stories);
-        
-        this.story = response.data.stories
-      })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   })
-    }
+  mounted() {
+    this.$store.dispatch('getStoryblokData')
   }
+  // mounted() {
+  //     const token = 'vzwC59CqmD9irvJTGSQVKAtt';   
+  //     axios.get(`https://api.storyblok.com/v1/cdn/stories?version=draft&token=${token}&starts_with=women`).then(res => {        
+  //     console.log(res.data.stories);
+  //     this.story = res.data.stories;  
+  //   })
+  //  }
+  
+
+  //   created () {
+  //   window.storyblok.init({
+  //     accessToken: token
+  //   })
+  //   window.storyblok.on('change', () => {
+  //     this.getStory('women', 'draft')
+  //   })
+  //   window.storyblok.pingEditor(() => {
+  //     if (window.storyblok.isInEditor()) {
+  //       this.getStory.filter('women', 'draft')
+  //     } else {
+  //       this.getStory('women', 'draft')
+  //     }
+  //   })
+  // },
+  //   methods: {
+  //   getStory(slug, version) {
+  //     storyapi.get('cdn/stories/', {
+  //       version: 'draft',
+  //       starts_with: 'women/'
+  //     })
+  //     .then((response) => {
+  //       console.log(response.data.stories);
+        
+  //       this.story = response.data.stories
+  //     })
+  //   }
+  // }
 }
 </script>
 

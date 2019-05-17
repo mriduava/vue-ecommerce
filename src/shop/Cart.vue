@@ -41,7 +41,7 @@
             <tr>
                 <td><router-link to="/men" class="btn btn-outline-info btn-sm"><i class="fa fa-angle-left"></i> Continue Shopping</router-link></td>
                 <td colspan="2" class="hidden-xs"></td>
-                <td class="hidden-xs text-center"><strong> {{total.toFixed(2)}} kr</strong></td>
+                <td class="hidden-xs text-center">TOTAL <strong> {{total.toFixed(2)}} kr</strong></td>
                 <td><router-link to="/cart/checkout" class="btn btn-success btn-sm px-4">Checkout <i class="fas fa-angle-right"></i></router-link></td>
             </tr>
         </tfoot>

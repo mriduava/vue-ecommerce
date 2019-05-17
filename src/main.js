@@ -1,5 +1,7 @@
 import Vue from "vue";
 import App from "./App.vue";
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
 import router from "./router";
 import {store} from "./store";
 import "./registerServiceWorker";
@@ -12,6 +14,7 @@ import 'bootstrap';
 import '../public/scss/app.scss';
 import StoryblokVue from 'storyblok-vue';
 
+Vue.use(Vuetify);
 
 Vue.use(StoryblokVue)
 

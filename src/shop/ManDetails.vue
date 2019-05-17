@@ -90,7 +90,7 @@ export default {
         console.log(item);
     },
     getStory(slug, version) {
-      storyapi.get('cdn/stories/' + this.$route.params.manid, {
+      storyapi.get('cdn/stories/' + this.$route.params.manid, {  // manid from router.js
         version: 'draft'
         // starts_with: 'men/'
       })

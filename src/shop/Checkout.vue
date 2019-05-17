@@ -1,6 +1,6 @@
 <template>
 <!--Main layout-->
-  <main class="mt-5 pt-4">
+  <main class="">
     <div class="container wow fadeIn">
 
       <!-- Heading -->
@@ -59,7 +59,7 @@
               <!--email-->
               <div class="md-form mb-5">
                 <input type="text" id="email" class="form-control" placeholder="youremail@example.com">
-                <label for="email" class="">Email (optional)</label>
+                <label for="email" class="">Email</label>
               </div>
 
               <!--address-->
