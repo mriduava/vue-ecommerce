@@ -1,20 +1,20 @@
 <template>
- <div class="container-fluid pl-5 pr-5 mxl-md-5 mr-md-5">
+ <div class="container-fluid pl-5 pr-5 mxl-md-5 mr-md-5 mb-5">
    <div class="row">
-     <div class="col-lg-12 mx-auto">
+     <div class="col-lg-12 mx-auto mb-5">
       <div class="card">
         <div class="row">
          <div class="col-lg-2">
             
         </div>
-        <div class="col-lg-3 my-md-2">
+        <div class="col-lg-3 my-md-2 py-5">
         <div class="card-header border-1">
             <img style="width:100%" :src="product.thumbnail">
         </div>
         </div>
 
         <div class="col-lg-3 m-0">
-        <div class="card-block pt-2 pl-0">
+        <div class="card-block py-5">
             <h3 class="card-title text-secondary"> {{product.title}} </h3>
             <p class="card-text"> {{product.summary}} </p>
             <h5 class="text-info">Price: {{product.price}} </h5>

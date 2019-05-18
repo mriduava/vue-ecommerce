@@ -1,13 +1,13 @@
 <template>
  <div class="conatiner">
     <nav class="navbar navbar-expand-lg navbar-light px-sm-5 mx-md-5">
-     <router-link to='/' class="navbar-brand" href="#">Fashion</router-link>
+     <router-link to='/' class="navbar-brand ml-4">Fashion</router-link>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto mr-3 pr-1">
        
             <li class="nav-item">
                 <router-link class="nav-link" to="/men">MEN</router-link>
@@ -60,6 +60,7 @@ export default {
   .navbar-brand{
       font-size: 3.5rem;
       font-family: Movu;
+    //   margin-left: 4%;
   }
   a {
     font-weight: bold;

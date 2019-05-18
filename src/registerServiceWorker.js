@@ -21,6 +21,8 @@ if (process.env.NODE_ENV === "production") {
     },
     updated() {
       console.log("New content is available; please refresh.");
+      let worker = registration.waiting
+      worker.postMessage({action: 'skipWaiting'})
     },
     offline() {
       console.log(

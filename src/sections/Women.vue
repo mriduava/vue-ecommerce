@@ -7,13 +7,14 @@
            <img :src="woman.content.thumbnail" class="card-img-top croped" alt="mridufashion">
         </div>
         <div class="card-body">
-          <h5 class="card-title">{{ woman.content.title }} <span class="price float-right">{{woman.content.price}}</span></h5>
+          <h5 class="card-title">{{ woman.content.title }}</h5>
           <p class="card-text">{{ woman.content.summary.substring(0,100) }}</p>
+          <h5 class="price float-right text-primary">{{woman.content.price}} Kr</h5>
         </div>
 
         <div class="card-footer bg-light">
            <router-link to="id"><a class="btn btn-outline-warning btn-sm text-dark">LIKE</a></router-link>
-           <router-link :to="'/'"><a class="btn btn-outline-success btn-sm">ADD TO BAG</a></router-link>
+           <router-link :to="'/'"><a class="btn btn-outline-success btn-sm ml-2">ADD TO BAG</a></router-link>
         </div>
      </div>
     </div>
@@ -39,11 +40,11 @@ export default {
   // },
   computed: {
     storyData(){
-      return this.$store.getters.allStoryData;
+      return this.$store.getters.allWomenData;
     }    
   },
   mounted() {
-    this.$store.dispatch('getStoryblokData')
+    this.$store.dispatch('getStoryWomenData')
   }
   // mounted() {
   //     const token = 'vzwC59CqmD9irvJTGSQVKAtt';   

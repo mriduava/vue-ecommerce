@@ -1,8 +1,8 @@
 <template>
-    <div class="container-fluid h-70 px-0" id="#front">
-      <div class="row h-100 justify-content-center align-items-center">
+    <div class="container p-0" id="#front">
+      <div class="row d-flex">
 
-        <div class="col-md-10 ml-1 mt-2">
+        <div class="col-lg-4 front-caption pl-5 pt-5 mt-5">
             <h1 class="front-title">
               Happiness is...
             </h1>
@@ -14,19 +14,44 @@
             </div>
         </div>
 
-        <!-- <div class="col-md-8">
-          <div class="graphic">
-              <img class="w-100" src="#" alt="">
-          </div>
-        </div> -->
+        <!-- TO DISPLAY FRONT IMAGES -->
+        <div class="col-lg-8">
 
+          <FrontDisp/>
+
+        </div>      
       </div>
+      
+      <!-- TO DISPLAY CAROUSEL -->
+      <div class="row bg-secondary">
+        <div class="col-lg-12">
+
+          <Carousel/>
+
+        </div>
+      </div>
+      
+
     </div>
 </template>
 
 <script>
+import Carousel from './Carousel.vue'
+import FrontDisp from './FrontDisp.vue'
 export default {
 name: "Front",
+components: {
+  Carousel,
+  FrontDisp
+},
+// data() {
+//   return limitation = 1
+// },
+  computed: {
+    storyData(){
+      return this.$store.getters.allStoryData;
+    }    
+  }
 
 };
 </script>
@@ -36,17 +61,24 @@ name: "Front",
   font-family: Eternal;
   src: url('../../public/fonts/eternal.ttf');
 }
-  .container-fluid{
-    background-image: url("../../public/img/fashion.jpg");
+
+  .container{
+    // background-image: url("../../public/img/fashion.jpg");
+    background-color: #fff;
     background-size: cover;
-      background-attachment: fixed;
-    margin-top: -7rem !important;
+    background-attachment: fixed;
+    // margin-top: -7rem !important;
     width: 100%;
-    height: 100vh;
     text-align: left;
     overflow: hidden;
-    .front-title{
-      margin-left: 5%;
+    // border: 1px solid #ddd;
+    .front-caption{
+
+      .front-title{
+      margin-left: 2%;
+      margin-top: 2%;
+      padding-top: 2%;
+      padding-left: 5.7%;
       color: #e84393;
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
       font-family: Eternal;
@@ -58,6 +90,8 @@ name: "Front",
       margin-left: 2%;
       font-size: 1.6rem;
     }
+  }
+
     .btn{
       color: #f368e0;
       border: 1px solid #e84393;
@@ -66,5 +100,6 @@ name: "Front",
         color: #fff;
       }
     }
+
   }
 </style>

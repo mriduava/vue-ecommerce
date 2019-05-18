@@ -6,6 +6,7 @@ import router from "./router";
 import {store} from "./store";
 import "./registerServiceWorker";
 import jQuery from 'jquery'; 
+// import firebase from 'firebase'; 
 
 window.$ = window.jQuery = jQuery;
 
@@ -26,6 +27,21 @@ window.eventBus = new Vue()
 // export const eventBus = new Vue();
 // export default eventBus;
 // Vue.prototype.$eventBus = eventBus;
+
+
+// export const config = {
+//   apiKey: "AIzaSyCPY4gZqYGwnC2wUetdOUaRFoeLUtmXjVw",
+//   authDomain: "mridustore.firebaseapp.com",
+//   databaseURL: "https://mridustore.firebaseio.com",
+//   projectId: "mridustore",
+//   storageBucket: "mridustore.appspot.com",
+//   messagingSenderId: "234274059906",
+//   appId: "1:234274059906:web:23d2bf249936bc36"
+// }
+
+// firebase.initializeApp(config);
+
+
 
 new Vue({
   router,

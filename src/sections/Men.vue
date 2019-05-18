@@ -7,13 +7,14 @@
            <img :src="man.content.thumbnail" class="card-img-top croped" alt="mridufashion">
         </div>
         <div class="card-body">
-          <h5 class="card-title">{{ man.content.title }} <span class="price float-right">{{man.content.price}}</span></h5>
+          <h5 class="card-title">{{ man.content.title }}</h5>
           <p class="card-text">{{ man.content.summary.substring(0, 100) }}</p>
+          <h5 class="price float-right text-primary">{{man.content.price}} Kr</h5>
         </div>
 
-        <div class="card-footer bg-light">
+        <div class="card-footer">
            <router-link to="id"><a class="btn btn-outline-warning btn-sm text-dark">LIKE</a></router-link>
-           <router-link :to="'/men/' + man.id"><a class="btn btn-outline-success btn-sm">ADD TO BAG</a></router-link>
+           <router-link :to="'/men/' + man.id"><a class="btn btn-outline-success btn-sm ml-2">ADD TO BAG</a></router-link>
         </div>
      </div>
     </div>
@@ -75,5 +76,8 @@ export default {
     width: 100%;
     height: 250px;
     overflow: hidden;
+}
+.card-footer{
+  background: #ddd;
 }
 </style>

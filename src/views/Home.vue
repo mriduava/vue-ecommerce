@@ -1,9 +1,11 @@
 <template>
  <div>
    
+   <div class="back-image">
     <Front/>
+   </div>
 
-    <v-layout row wrap>
+    <!-- <v-layout row wrap>
       <v-flex xs12>
         <v-carousel>
         <v-carousel-item
@@ -14,14 +16,12 @@
       </v-carousel>
 
       </v-flex>
-    </v-layout>
+    </v-layout> -->
 
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
 import Front from '@/components/Front'
 
 export default {
@@ -31,3 +31,13 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.back-image{
+  
+  /* background-image: url("../../public/img/fashion.jpg"); */
+  /* background: #ddd; */
+  /* margin-top: -7rem !important; */
+}
+</style>
+
