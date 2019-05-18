@@ -77,7 +77,4 @@ export default {
     height: 250px;
     overflow: hidden;
 }
-.card-footer{
-  background: #ddd;
-}
 </style>

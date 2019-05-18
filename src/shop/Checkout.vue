@@ -1,10 +1,12 @@
 <template>
 <!--Main layout-->
+<div class="container p-0" id="#front">
+  <div class="row d-flex">
   <main class="">
     <div class="container wow fadeIn">
 
       <!-- Heading -->
-      <h2 class="my-0 h2 text-center">Checkout form</h2>
+      <h2 class="mb-4 h2 text-center">Checkout form</h2>
 
       <!--Grid row-->
       <div class="row">
@@ -17,29 +19,25 @@
 
             <!--Card content-->
             <form class="card-body">
-
-              <!--Grid row-->
               <div class="row">
-
-                <!--Grid column-->
-                <div class="col-md-6 mb-2">
+                <div class="col-md-6 mb-0">
 
                   <!--firstName-->
                   <div class="md-form ">
-                    <input type="text" id="firstName" class="form-control">
                     <label for="firstName" class="">First name</label>
+                    <input type="text" id="firstName" class="form-control">                    
                   </div>
 
                 </div>
                 <!--Grid column-->
 
                 <!--Grid column-->
-                <div class="col-md-6 mb-2">
+                <div class="col-md-6 mb-4">
 
                   <!--lastName-->
                   <div class="md-form">
-                    <input type="text" id="lastName" class="form-control">
                     <label for="lastName" class="">Last name</label>
+                    <input type="text" id="lastName" class="form-control">                    
                   </div>
 
                 </div>
@@ -57,21 +55,22 @@
               </div> -->
 
               <!--email-->
-              <div class="md-form mb-5">
-                <input type="text" id="email" class="form-control" placeholder="name@email.com">
+              <div class="md-form mb-3">
                 <label for="email" class="">Email</label>
+                <input type="text" id="email" class="form-control" placeholder="name@email.com">                
               </div>
 
               <!--address-->
-              <div class="md-form mb-5">
-                <input type="text" id="address" class="form-control" placeholder="1234 Main St">
+              <div class="md-form mb-3">
                 <label for="address" class="">Address</label>
+                <input type="text" id="address" class="form-control" placeholder="1234 Main St">                
               </div>
 
               <!--address-2-->
-              <div class="md-form mb-5">
+              <div class="md-form mb-3">
+                <!-- <label for="address-2" class="">Address 2 (optional)</label> -->
                 <input type="text" id="address-2" class="form-control" placeholder="Apartment or suite">
-                <label for="address-2" class="">Address 2 (optional)</label>
+                
               </div>
 
               <!--Grid row-->
@@ -93,7 +92,7 @@
                 <!--Grid column-->
 
                 <!--Grid column-->
-                <div class="col-lg-4 col-md-6 mb-4">
+                <div class="col-lg-4 col-md-6 mb-3">
 
                   <label for="state">City</label>
                   <select class="custom-select d-block w-100" id="state" required>
@@ -108,7 +107,7 @@
                 <!--Grid column-->
 
                 <!--Grid column-->
-                <div class="col-lg-4 col-md-6 mb-4">
+                <div class="col-lg-4 col-md-6 mb-3">
 
                   <label for="zip">Zip</label>
                   <input type="text" class="form-control" id="zip" placeholder="" required>
@@ -122,7 +121,7 @@
               </div>
               <!--Grid row-->
 
-              <hr>
+              <!-- <hr>
 
               <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="same-address">
@@ -158,7 +157,7 @@
                     Name on card is required
                   </div>
                 </div>
-                <div class="col-md-6 mb-3">
+                <div class="col-md-6 mb-2">
                   <label for="cc-number">Credit card number</label>
                   <input type="text" class="form-control" id="cc-number" placeholder="" required>
                   <div class="invalid-feedback">
@@ -167,14 +166,14 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-3 mb-3">
+                <div class="col-md-3 mb-2">
                   <label for="cc-expiration">Expiration</label>
                   <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
                   <div class="invalid-feedback">
                     Expiration date required
                   </div>
                 </div>
-                <div class="col-md-3 mb-3">
+                <div class="col-md-3 mb-2">
                   <label for="cc-expiration">CVV</label>
                   <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
                   <div class="invalid-feedback">
@@ -182,8 +181,8 @@
                   </div>
                 </div>
               </div>
-              <hr class="mb-4">
-              <button class="btn btn-outline-info btn-lg btn-block" type="submit">Continue to checkout</button>
+              <hr class="mb-4"> -->
+              <button class="btn btn-outline-success btn-lg btn-block" type="submit">Continue to checkout</button>
 
             </form>
 
@@ -247,7 +246,8 @@
   </main>
   <!--Main layout-->
 
-    
+ </div>
+</div>
 </template>
 
 <script>

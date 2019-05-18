@@ -1,20 +1,20 @@
 <template>
-   <div class="container-fluid pl-5 pr-5 mxl-md-5 mr-md-5 mb-5">
-   <div class="row">
+  <div class="container p-0" id="#front">
+      <div class="row d-flex">
      <div class="col-lg-12 mx-auto mb-5" v-for="inf in info" :key="inf.id">
       <div class="card">
         <div class="row">
          <div class="col-lg-2">
             
         </div>
-        <div class="col-lg-3 my-md-2 py-5">
+        <div class="col-lg-3 my-md-2 pt-5">
         <div class="card-header border-1">
             <img style="width:100%" :src="inf.content.thumbnail">
         </div>
         </div>
 
         <div class="col-lg-3 mt-3">
-        <div class="card-block py-5">
+        <div class="card-block pt-5 pb-5">
             <h3 class="card-title text-secondary">{{inf.content.title}} </h3>
             <p class="card-text">{{inf.content.summary}}</p>
           </div>

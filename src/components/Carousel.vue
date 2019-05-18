@@ -17,7 +17,7 @@
     <div class="carousel-item active">
       <div class="col-md-3 mb-3" v-for="(item, index) in menData.slice(0, 4)" :item="item" :index="index" :key="item.id">
         <div class="card">
-          <img class="img-fluid" :src="item.content.thumbnail" alt="Card image cap">
+          <router-link to="/men"><img class="img-fluid" :src="item.content.thumbnail" alt="Card image cap"></router-link>
         </div>
       </div>
     </div>
@@ -26,22 +26,19 @@
     <div class="carousel-item">
       <div class="col-md-3 mb-3" v-for="(item, index) in womenData.slice(0, 4)" :item="item" :index="index" :key="item.id">
         <div class="card">
-          <img class="img-fluid" :src="item.content.thumbnail" alt="Card image cap">
+          <router-link to="/women"><img class="img-fluid" :src="item.content.thumbnail" alt="Card image cap"></router-link>
         </div>
       </div>
-
     </div>
     <!--/.Second slide-->
 
     <!--Third slide-->
     <div class="carousel-item">
-
       <div class="col-md-3 mb-3" v-for="(item, index) in kidsData.slice(0, 4)" :item="item" :index="index" :key="item.id">
         <div class="card">
-          <img class="img-fluid" :src="item.content.thumbnail" alt="Card image cap">
+          <router-link to="/kids"><img class="img-fluid" :src="item.content.thumbnail" alt="Card image cap"></router-link>
         </div>
       </div>
-
     </div>
     <!--/.Third slide-->
 
@@ -73,10 +70,15 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .card{
     height: 160px;
     overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    &:hover{
+       opacity: 0.6;
+	   filter: grayscale(50%);
+    }
 }
 .carousel-multi-item-2 .card img {
     border-radius: 2px; 

@@ -10,10 +10,10 @@
             <ul class="navbar-nav ml-auto mr-lg-3 pr-1">
        
             <li class="nav-item">
-                <router-link class="nav-link" to="/men">MEN</router-link>
+                <router-link class="nav-link" to="/women">WOMEN</router-link>
             </li>
             <li class="nav-item">
-                <router-link class="nav-link" to="/women">WOMEN</router-link>
+                <router-link class="nav-link" to="/men">MEN</router-link>
             </li>
             <li class="nav-item">
                 <router-link class="nav-link" to="/kids">KIDS</router-link>

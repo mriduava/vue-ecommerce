@@ -23,12 +23,6 @@
 </template>
 
 <script>
-import StoryblokClient from 'storyblok-js-client'
-import { log } from 'util';
-const token = 'vzwC59CqmD9irvJTGSQVKAtt';
-let storyapi = new StoryblokClient({
-  accessToken: token
-}) 
 export default {
   name: 'Men',
   computed: {
@@ -48,8 +42,5 @@ export default {
     width: 100%;
     height: 250px;
     overflow: hidden;
-}
-.card-footer{
-  background: #ddd;
 }
 </style>

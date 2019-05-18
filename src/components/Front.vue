@@ -38,7 +38,7 @@
       </div>
       
       <!-- TO DISPLAY CAROUSEL -->
-        <h1 class="recent text-center">N e w C o l l e c t i o n s</h1>
+        <h1 class="recent text-center">New Collections</h1>
       <div class="row">
        
         <div class="col-lg-12">

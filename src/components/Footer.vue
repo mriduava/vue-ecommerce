@@ -35,7 +35,7 @@ export default {
 .bottom-container{
 	height: 140px;
 	background: transparent;
-	margin-top: 3%;;
+	margin-top: 3%;
 	padding: 0;
 }
 .bottom-container>.bottom-bar,
