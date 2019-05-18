@@ -18,16 +18,21 @@
       </v-flex>
     </v-layout> -->
 
+    <Footer/>
+
   </div>
 </template>
 
 <script>
 import Front from '@/components/Front'
+import Footer from '@/components/Footer'
+
 
 export default {
   name: "home",
   components: {
-    Front
+    Front,
+    Footer
   }
 };
 </script>

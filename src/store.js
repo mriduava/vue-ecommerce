@@ -13,7 +13,7 @@ export const store = new Vuex.Store({
   state: {
     womenData: [],
     menData: [],
-    sendData: []
+    cartData: []
   },
   getters: {
     allWomenData: state => {
@@ -24,7 +24,7 @@ export const store = new Vuex.Store({
     },
  
     dataItems: state => {
-      return state.sendData.map(cartitem=> cartitem.product)
+      return state.cartData.map(cartitem=> cartitem.product)
     }
   },
   mutations: {

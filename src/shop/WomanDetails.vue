@@ -23,16 +23,14 @@
             <button class="btn btn-success btn-sm" @click="addToCart()">ADD TO BAG</button>
                    
           <div class="mt-3">     
-            <router-link to="/men" class="btn btn-outline-info btn-sm"><i class="fa fa-angle-left"></i> Continue Shopping</router-link>
+            <router-link to="/women" class="btn btn-outline-info btn-sm"><i class="fa fa-angle-left"></i> Continue Shopping</router-link>
             <router-link to="/cart" class="btn btn-outline-info btn-sm ml-3"> Shopping Cart <i class="fa fa-angle-right"></i></router-link>
           </div> 
           </div>
         </div>
 
         <div class="col-lg-4 ml-4">
-
         </div>
-
 
         </div>
         <div class="w-100"></div>
@@ -48,7 +46,6 @@ import Vue from "vue";
 import {store} from '../store.js'
 import StoryblokClient from 'storyblok-js-client'
 import Cart from './Cart'
-// import {eventBus} from '../main';
 import { log } from 'util';
 
 const token = 'vzwC59CqmD9irvJTGSQVKAtt';
@@ -56,14 +53,13 @@ let storyapi = new StoryblokClient({
   accessToken: token
 }) 
 export default {
-  name: 'ManDetails',
+  name: 'WomanDetails',
   components: {
     Cart
   },
   data () {
     return {
       product: {}
-      // quantity: 1
     }
   },
   created () {
@@ -71,37 +67,33 @@ export default {
       accessToken: token
     })
     window.storyblok.on('change', () => {
-      this.getStory('men', 'draft')
+      this.getStory('women', 'draft')
     })
     window.storyblok.pingEditor(() => {
       if (window.storyblok.isInEditor()) {
-        this.getStory.filter('men', 'draft')
+        this.getStory.filter('woman', 'draft')
       } else {
-        this.getStory('men', 'draft')
+        this.getStory('women', 'draft')
       }
     })
   },
   methods: {
     addToCart(){
         let item = {product: this.product, quantity: this.quantity};
-        // this.$emit('cart-item', item);
-        // this.sendData.push(item)
         this.$store.state.cartData.push(item)
         console.log(item);
     },
     getStory(slug, version) {
-      storyapi.get('cdn/stories/' + this.$route.params.manid, {  // manid from router.js
+      storyapi.get('cdn/stories/' + this.$route.params.womanid, { 
         version: 'draft'
-        // starts_with: 'men/'
       })
-      .then(res => {
-          // console.log(res.data.story.content);          
+      .then(res => {      
           return this.product = res.data.story.content
         
-      });
-    //   .catch((error) => {
-    //     console.log(error);
-    //   })
+      })
+      .catch((error) => {
+        console.log(error);
+      })
     }
    
 

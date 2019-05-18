@@ -1,5 +1,5 @@
 <template>
-       <div class="container">
+       <!-- <div class="container"> -->
         <!-- <h4 class="text-center poiret text-info">ATTRACTIVE COLLECTIONS</h4> -->
         <div class="row mt-4 d-flex mx-auto">
 
@@ -30,7 +30,7 @@
         </div>   
 
       </div>
-    </div>
+    <!-- </div> -->
 </template>
 
 <script>
@@ -53,16 +53,26 @@ export default {
 <style lang="scss" scoped>
 .portrait{
     width: 100%;
-    height: 500px;
+    // height: 200px;
     overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    &:hover{
+       opacity: 0.6;
+	   filter: grayscale(50%);
+    }
     img{
         margin-top: 2%;
     }
 }
 .women_g{
     margin: 2%;
-    height: 136px;
+    height: 142px;
     overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    &:hover{
+       opacity: 0.6;
+	   filter: grayscale(50%);
+    }
 }
 
 </style>

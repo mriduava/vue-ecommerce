@@ -2,28 +2,45 @@
     <div class="container p-0" id="#front">
       <div class="row d-flex">
 
-        <div class="col-lg-4 front-caption pl-5 pt-5 mt-5">
+        <div class="col-lg-4 front-caption pl-5 pt-5 mt-5 pb-0">
             <h1 class="front-title">
               Happiness is...
             </h1>
             <p class="front-text">
               receiving what you order online.
             </p>
-            <div class="shop-btn mb-3">
+            <div class="shop-btn">
                 <button class="btn custom-btn">Shop Online</button>
             </div>
         </div>
 
         <!-- TO DISPLAY FRONT IMAGES -->
-        <div class="col-lg-8">
-
+        <div class="col-lg-8 mb-0">
           <FrontDisp/>
+        </div>
 
-        </div>      
+        <div class="d-block">
+        <div class="row my-5 pb-4">
+            <div class="col-8 mx-auto">
+                <div class="card-body text-center">
+                    <h2 class="card-title poiret">TOP QUALITY AT A GREAT PRICE</h2>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur, 
+                        adipisicing elit. Velit nisi molestiae eligendi officiis 
+                        cum repudiandae, soluta, voluptas ipsum possimus nam 
+                        dolores error doloribus dicta nesciunt sit autem cupiditate 
+                        necessitatibus earum.
+                    </p>
+                </div>
+            </div>
+        </div>
+      </div>  
+
       </div>
       
       <!-- TO DISPLAY CAROUSEL -->
-      <div class="row bg-secondary">
+        <h1 class="poiret text-secondary text-center">RECENT COLLECTIONS</h1>
+      <div class="row">
+       
         <div class="col-lg-12">
 
           <Carousel/>
@@ -65,24 +82,24 @@ components: {
   .container{
     // background-image: url("../../public/img/fashion.jpg");
     background-color: #fff;
-    background-size: cover;
-    background-attachment: fixed;
+    // background-size: cover;
+    // background-attachment: fixed;
     // margin-top: -7rem !important;
     width: 100%;
     text-align: left;
     overflow: hidden;
-    // border: 1px solid #ddd;
+    border: 2px solid #e4e4e4;
     .front-caption{
 
       .front-title{
-      margin-left: 2%;
+      margin-left: 2.5%;
       margin-top: 2%;
-      padding-top: 2%;
+      padding-top: 2.5%;
       padding-left: 5.7%;
       color: #e84393;
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
       font-family: Eternal;
-      font-size: 8rem;
+      font-size: 7rem;
     }
     .front-text,
     & .shop-btn{

@@ -14,7 +14,7 @@
 
         <div class="card-footer bg-light">
            <router-link to="id"><a class="btn btn-outline-warning btn-sm text-dark">LIKE</a></router-link>
-           <router-link :to="'/'"><a class="btn btn-outline-success btn-sm ml-2">ADD TO BAG</a></router-link>
+           <router-link :to="'/women/' + woman.id"><a class="btn btn-outline-success btn-sm ml-2">ADD TO BAG</a></router-link>
         </div>
      </div>
     </div>

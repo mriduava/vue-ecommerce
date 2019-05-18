@@ -7,6 +7,7 @@ import Women from "./sections/Women.vue";
 import Kids from "./sections/Kids.vue";
 import LogIn from "./user/LogIn.vue";
 import ManDetails from "./shop/ManDetails.vue";
+import WomanDetails from "./shop/WomanDetails.vue";
 import Cart from "./shop/Cart.vue";
 import Checkout from "./shop/Checkout.vue";
 
@@ -48,6 +49,11 @@ export default new Router({
       path: "/women",
       name: "women",
       component: Women
+    },
+    {
+      path: "/women/:womanid",
+      name: "womandetails",
+      component: WomanDetails
     },
     {
       path: "/kids",
