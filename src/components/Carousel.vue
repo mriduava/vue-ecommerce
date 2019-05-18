@@ -30,58 +30,15 @@
         </div>
       </div>
 
-      <!-- <div class="col-md-3 mb-3">
-        <div class="card">
-          <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(25).jpg"
-            alt="Card image cap">
-        </div>
-      </div>
-
-      <div class="col-md-3 mb-3">
-        <div class="card">
-          <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(47).jpg"
-            alt="Card image cap">
-        </div>
-      </div>
-
-      <div class="col-md-3 mb-3">
-        <div class="card">
-          <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(26).jpg"
-            alt="Card image cap">
-        </div>
-      </div> -->
-
     </div>
     <!--/.Second slide-->
 
     <!--Third slide-->
     <div class="carousel-item">
 
-      <div class="col-md-3 mb-3">
+      <div class="col-md-3 mb-3" v-for="(item, index) in kidsData.slice(0, 4)" :item="item" :index="index" :key="item.id">
         <div class="card">
-          <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(64).jpg"
-            alt="Card image cap">
-        </div>
-      </div>
-
-      <div class="col-md-3 mb-3">
-        <div class="card">
-          <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(51).jpg"
-            alt="Card image cap">
-        </div>
-      </div>
-
-      <div class="col-md-3 mb-3">
-        <div class="card">
-          <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(59).jpg"
-            alt="Card image cap">
-        </div>
-      </div>
-
-      <div class="col-md-3 mb-3">
-        <div class="card">
-          <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(63).jpg"
-            alt="Card image cap">
+          <img class="img-fluid" :src="item.content.thumbnail" alt="Card image cap">
         </div>
       </div>
 
@@ -105,7 +62,10 @@ export default {
         },
         menData(){
            return this.$store.getters.allMenData;
-        }     
+        },
+        kidsData(){
+           return this.$store.getters.allKidsData;
+        }      
     },
     mounted() {
         this.$store.dispatch('getStoryMenData')

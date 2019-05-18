@@ -38,7 +38,7 @@
       </div>
       
       <!-- TO DISPLAY CAROUSEL -->
-        <h1 class="poiret text-secondary text-center">RECENT COLLECTIONS</h1>
+        <h1 class="recent text-center">N e w C o l l e c t i o n s</h1>
       <div class="row">
        
         <div class="col-lg-12">
@@ -78,6 +78,10 @@ components: {
   font-family: Eternal;
   src: url('../../public/fonts/eternal.ttf');
 }
+@font-face {
+  font-family: Redux;
+  src: url('../../public/fonts/redux.ttf');
+}
 
   .container{
     // background-image: url("../../public/img/fashion.jpg");
@@ -116,6 +120,11 @@ components: {
         background: #e84393;
         color: #fff;
       }
+    }
+    .recent{
+      font-family: Redux;
+      font-size: 2rem;
+      color: #e84393;
     }
 
   }
