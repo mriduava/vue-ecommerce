@@ -4,7 +4,7 @@
     <div class="container wow fadeIn">
 
       <!-- Heading -->
-      <h2 class="my-5 h2 text-center">Checkout form</h2>
+      <h2 class="my-0 h2 text-center">Checkout form</h2>
 
       <!--Grid row-->
       <div class="row">
@@ -49,16 +49,16 @@
               <!--Grid row-->
 
               <!--Username-->
-              <div class="md-form input-group pl-0 mb-5">
+              <!-- <div class="md-form input-group pl-0 mb-5">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon1">@</span>
                 </div>
                 <input type="text" class="form-control py-0" placeholder="Username" aria-describedby="basic-addon1">
-              </div>
+              </div> -->
 
               <!--email-->
               <div class="md-form mb-5">
-                <input type="text" id="email" class="form-control" placeholder="youremail@example.com">
+                <input type="text" id="email" class="form-control" placeholder="name@email.com">
                 <label for="email" class="">Email</label>
               </div>
 
@@ -83,7 +83,7 @@
                   <label for="country">Country</label>
                   <select class="custom-select d-block w-100" id="country" required>
                     <option value="">Choose...</option>
-                    <option>United States</option>
+                    <option>Sweden</option>
                   </select>
                   <div class="invalid-feedback">
                     Please select a valid country.
@@ -95,7 +95,7 @@
                 <!--Grid column-->
                 <div class="col-lg-4 col-md-6 mb-4">
 
-                  <label for="state">State</label>
+                  <label for="state">City</label>
                   <select class="custom-select d-block w-100" id="state" required>
                     <option value="">Choose...</option>
                     <option>California</option>
@@ -183,7 +183,7 @@
                 </div>
               </div>
               <hr class="mb-4">
-              <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+              <button class="btn btn-outline-info btn-lg btn-block" type="submit">Continue to checkout</button>
 
             </form>
 
@@ -199,42 +199,29 @@
           <!-- Heading -->
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-muted">Your cart</span>
-            <span class="badge badge-secondary badge-pill">3</span>
+            <span class="badge badge-secondary badge-pill"> {{countItems}} </span>
           </h4>
 
           <!-- Cart -->
-          <ul class="list-group mb-3 z-depth-1">
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <ul class="list-group mb-3 z-depth-1" >
+            <li class="list-group-item d-flex justify-content-between lh-condensed" v-for="(item) in checkItems" :key="item.id">
               <div>
-                <h6 class="my-0">Product name</h6>
-                <small class="text-muted">Brief description</small>
+                <h6 class="my-0"> {{item.title}} </h6>
+                <small class="text-muted">{{item.summary.substring(10, 30)}}</small>
               </div>
-              <span class="text-muted">$12</span>
+              <span class="text-muted">{{item.price}} kr</span>
             </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Second product</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">$8</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Third item</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">$5</span>
-            </li>
+
             <li class="list-group-item d-flex justify-content-between bg-light">
               <div class="text-success">
                 <h6 class="my-0">Promo code</h6>
                 <small>EXAMPLECODE</small>
               </div>
-              <span class="text-success">-$5</span>
+              <span class="text-success">-5 Kr</span>
             </li>
             <li class="list-group-item d-flex justify-content-between">
-              <span>Total (USD)</span>
-              <strong>$20</strong>
+              <span>Total</span>
+              <strong>20 Kr</strong>
             </li>
           </ul>
           <!-- Cart -->
@@ -265,7 +252,15 @@
 
 <script>
 export default {
-
+  name: 'Checkout',
+  computed: {
+     checkItems() {
+        return this.$store.getters.cartItems;
+     },
+     countItems() {
+        return this.$store.state.cartData.length
+     }
+  }
 }
 </script>
 

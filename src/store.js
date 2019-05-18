@@ -23,7 +23,7 @@ export const store = new Vuex.Store({
       return state.menData
     },
  
-    dataItems: state => {
+    cartItems: state => {
       return state.cartData.map(cartitem=> cartitem.product)
     }
   },
@@ -33,6 +33,10 @@ export const store = new Vuex.Store({
     },
     GET_MEN: (state, manData) => {
       state.menData = manData
+    },
+    DELETE_ITEM: (state, id) => {
+      let index = state.cartData.findIndex(item => item.id == id);
+      state.cartData.splice(index, 1);
     }
   },
   actions: {

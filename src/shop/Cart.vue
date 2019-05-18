@@ -12,7 +12,7 @@
             </tr>
         </thead>
    
-        <tbody v-for="item in dataItems" :key="item.id">
+        <tbody v-for="(item) in cartItems" :key="item.id">
       
             <tr>
                 <td data-th="Product">
@@ -31,7 +31,7 @@
                 <td data-th="Subtotal" class="text-center">{{(item.price*item.quantity).toFixed(2)}} kr</td>
                 <td class="actions" data-th="">
                     <!-- <button class="btn btn-info btn-sm"><i class="fa fa-sync"></i></button> -->
-                    <button class="btn btn-danger btn-sm px-2 mx-3"><i class="fas fa-minus-square"></i></button>								
+                    <button class="btn btn-danger btn-sm px-2 mx-3" @click="removeItem()"><i class="fas fa-minus-square"></i></button>								
                 </td>
             </tr>
         </tbody>
@@ -70,21 +70,32 @@ export default {
     //         this.cartList.push(item);       
     //     })  
     // }
+    methods: {
+        removeItem() {
+           this.$store.commit("DELETE_ITEM");
+        }
+
+    },
     computed: {
         cartList() {
             return this.$store.state.sendData    
         },
-        dataItems() {
-            return this.$store.getters.dataItems;
+        cartItems() {
+            return this.$store.getters.cartItems;
         },
         total() {
             let total = 0;
-            for(let i=0; i<this.$store.getters.dataItems.length; i++){
-                let item = this.$store.getters.dataItems[i];
+            for(let i=0; i<this.$store.getters.cartItems.length; i++){
+                let item = this.$store.getters.cartItems[i];
                 total += item.quantity*item.price
             }
             return total;
         }
+        // removeItem(id) {
+        //     this.$store.commit("DELETE_ITEM");
+            // let index = this.$store.state.cartData.findIndex(item => item.id == id);
+            // this.$store.state.cartdData.splice(inex, 1)
+        // }
     }
     
 }

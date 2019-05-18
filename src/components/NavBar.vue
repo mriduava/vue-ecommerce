@@ -20,7 +20,7 @@
             </li>
 
              <li class="nav-item">
-                <router-link to="/cart" class="nav-link"><i class="fas fa-cart-plus"> <span class="itemNumber" id="itemCount"> {{countItems}} </span></i></router-link>
+                <router-link to="/cart" class="nav-link"><i class="fas fa-cart-plus"></i><span class="itemNumber" id="itemCount"> {{countItems}} </span></router-link>
             </li>
 
             <li class="nav-item">
@@ -71,13 +71,16 @@ export default {
   }
   .itemNumber{
     //   position: absolute;
-      font-size: 1.4rem;
-      background: #e83e8c;
-      width: 30px;
-      height: 30px;
-      padding-right: 10%;
-      margin: 5%;
+      font-size: 1rem;
+      background-color: #e83e8c;
+      width: 20px;
+      height: 20px;
+      padding-right: 5px;
+      padding-left: 1px;
+      margin-right: 30px;
+      top: 29px;
       color: aliceblue;
+      border: 2px solid #ddd;
       border-radius: 50%;
       text-align: center;
   }
