@@ -51,7 +51,7 @@ import Cart from './Cart'
 // import {eventBus} from '../main';
 import { log } from 'util';
 
-const token = 'vzwC59CqmD9irvJTGSQVKAtt';
+const token = 'YOUR_TOKEN';
 let storyapi = new StoryblokClient({
   accessToken: token
 }) 

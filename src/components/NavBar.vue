@@ -1,13 +1,15 @@
 <template>
  <div class="conatiner">
-    <nav class="navbar navbar-expand-lg navbar-light px-lg-5 mx-lg-5">
-     <router-link to='/' class="navbar-brand ml-4">Fashion</router-link>
+  <div class="row">
+    <div class="col-lg-12" id="navbar">
+    <nav class="navbar navbar-expand-md navbar-light ">
+     <router-link to='/' class="navbar-brand">Fashion</router-link>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto mr-lg-3 pr-1">
+            <ul class="navbar-nav ml-auto">
        
             <li class="nav-item">
                 <router-link class="nav-link" to="/women">WOMEN</router-link>
@@ -34,6 +36,8 @@
         </div>
     </nav>
 
+   </div>
+  </div>
 </div>
 </template>
 
@@ -57,10 +61,10 @@ export default {
 .navbar {
   z-index: 10;
   background: transparent;
+   margin: 0 6.3%;
   .navbar-brand{
       font-size: 3.5rem;
       font-family: Movu;
-    //   margin-left: 4%;
   }
   a {
     font-weight: bold;
@@ -70,7 +74,6 @@ export default {
     }
   }
   .itemNumber{
-    //   position: absolute;
       font-size: 1rem;
       background-color: #e83e8c;
       width: 20px;
@@ -86,7 +89,15 @@ export default {
   }
 
 }
-
+ 
+/* Large screens ----------- */
+@media only screen and (min-width : 1824px) {
+    #navbar{
+        margin-left: 14.3%;
+        padding-right: 29.5%;
+    }
+}
+ 
 </style>
 
 

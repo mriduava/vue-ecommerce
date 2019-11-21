@@ -1,84 +1,47 @@
 <template>
-<!--Main layout-->
 <div class="container p-0" id="#front">
   <div class="row d-flex">
   <main class="">
     <div class="container wow fadeIn">
-
-      <!-- Heading -->
       <h2 class="mb-4 h2 text-center">Checkout form</h2>
-
-      <!--Grid row-->
       <div class="row">
-
-        <!--Grid column-->
         <div class="col-md-8 mb-4">
 
-          <!--Card-->
           <div class="card">
-
-            <!--Card content-->
             <form class="card-body">
               <div class="row">
                 <div class="col-md-6 mb-0">
-
-                  <!--firstName-->
                   <div class="md-form ">
                     <label for="firstName" class="">First name</label>
                     <input type="text" id="firstName" class="form-control">                    
                   </div>
-
                 </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
+ 
                 <div class="col-md-6 mb-4">
-
-                  <!--lastName-->
                   <div class="md-form">
                     <label for="lastName" class="">Last name</label>
                     <input type="text" id="lastName" class="form-control">                    
                   </div>
-
                 </div>
-                <!--Grid column-->
-
               </div>
-              <!--Grid row-->
-
-              <!--Username-->
-              <!-- <div class="md-form input-group pl-0 mb-5">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1">@</span>
-                </div>
-                <input type="text" class="form-control py-0" placeholder="Username" aria-describedby="basic-addon1">
-              </div> -->
-
-              <!--email-->
+  
               <div class="md-form mb-3">
                 <label for="email" class="">Email</label>
                 <input type="text" id="email" class="form-control" placeholder="name@email.com">                
               </div>
 
-              <!--address-->
               <div class="md-form mb-3">
                 <label for="address" class="">Address</label>
                 <input type="text" id="address" class="form-control" placeholder="1234 Main St">                
               </div>
 
-              <!--address-2-->
               <div class="md-form mb-3">
-                <!-- <label for="address-2" class="">Address 2 (optional)</label> -->
                 <input type="text" id="address-2" class="form-control" placeholder="Apartment or suite">
-                
               </div>
 
-              <!--Grid row-->
               <div class="row">
 
-                <!--Grid column-->
                 <div class="col-lg-4 col-md-12 mb-4">
-
                   <label for="country">Country</label>
                   <select class="custom-select d-block w-100" id="country" required>
                     <option value="">Choose...</option>
@@ -87,13 +50,9 @@
                   <div class="invalid-feedback">
                     Please select a valid country.
                   </div>
-
                 </div>
-                <!--Grid column-->
 
-                <!--Grid column-->
                 <div class="col-lg-4 col-md-6 mb-3">
-
                   <label for="state">City</label>
                   <select class="custom-select d-block w-100" id="state" required>
                     <option value="">Choose...</option>
@@ -102,26 +61,17 @@
                   <div class="invalid-feedback">
                     Please provide a valid state.
                   </div>
-
                 </div>
-                <!--Grid column-->
 
-                <!--Grid column-->
                 <div class="col-lg-4 col-md-6 mb-3">
-
                   <label for="zip">Zip</label>
                   <input type="text" class="form-control" id="zip" placeholder="" required>
                   <div class="invalid-feedback">
                     Zip code required.
                   </div>
-
                 </div>
-                <!--Grid column-->
 
               </div>
-              <!--Grid row-->
-
-              <!-- <hr>
 
               <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="same-address">
@@ -185,23 +135,14 @@
               <button class="btn btn-outline-success btn-lg btn-block" type="submit">Continue to checkout</button>
 
             </form>
-
           </div>
-          <!--/.Card-->
 
         </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
         <div class="col-md-4 mb-4">
-
-          <!-- Heading -->
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-muted">Your cart</span>
             <span class="badge badge-secondary badge-pill"> {{countItems}} </span>
           </h4>
-
-          <!-- Cart -->
           <ul class="list-group mb-3 z-depth-1" >
             <li class="list-group-item d-flex justify-content-between lh-condensed" v-for="(item) in checkItems" :key="item.id">
               <div>
@@ -210,41 +151,12 @@
               </div>
               <span class="text-muted">{{item.price}} kr</span>
             </li>
-
-            <li class="list-group-item d-flex justify-content-between bg-light">
-              <div class="text-success">
-                <h6 class="my-0">Promo code</h6>
-                <small>EXAMPLECODE</small>
-              </div>
-              <span class="text-success">-5 Kr</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between">
-              <span>Total</span>
-              <strong>20 Kr</strong>
-            </li>
           </ul>
-          <!-- Cart -->
-
-          <!-- Promo code -->
-          <form class="card p-2">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Promo code" aria-label="Recipient's username" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-secondary btn-md waves-effect m-0" type="button">Redeem</button>
-              </div>
-            </div>
-          </form>
-          <!-- Promo code -->
 
         </div>
-        <!--Grid column-->
-
       </div>
-      <!--Grid row-->
-
     </div>
   </main>
-  <!--Main layout-->
 
  </div>
 </div>

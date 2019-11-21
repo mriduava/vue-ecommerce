@@ -9,6 +9,7 @@
 
 <script>
 import ManDetails from './shop/ManDetails'
+import WomanDetails from './shop/WomanDetails'
 import Cart from './shop/Cart'
 
 
@@ -16,14 +17,9 @@ export default {
   name: 'app',
   components: {
     ManDetails,
+    WomanDetails,
     Cart
   }
 
 }
 </script>
-
-
-<style lang="scss">
-
-
-</style>

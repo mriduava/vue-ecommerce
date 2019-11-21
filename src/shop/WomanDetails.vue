@@ -48,7 +48,7 @@ import StoryblokClient from 'storyblok-js-client'
 import Cart from './Cart'
 import { log } from 'util';
 
-const token = 'vzwC59CqmD9irvJTGSQVKAtt';
+const token = 'YOUR_TOKEN';
 let storyapi = new StoryblokClient({
   accessToken: token
 }) 

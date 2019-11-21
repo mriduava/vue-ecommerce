@@ -3,7 +3,7 @@
         <!-- <h4 class="text-center poiret text-info">ATTRACTIVE COLLECTIONS</h4> -->
         <div class="row mt-4 d-flex mx-auto">
 
-          <div class="col-lg-4 col-md-6 col-sm-12"  v-for="(item, index) in womenData.slice(1, 2)" :item="item" :index="index" :key="item.id">
+          <div class="col-lg-4 col-md-6 col-xm-6"  v-for="(item, index) in womenData.slice(1, 2)" :item="item" :index="index" :key="item.id">
             <div class="mt-2 portrait">
                 <router-link to="/women"><img class="w-100" :src="item.content.thumbnail" style="width: 100%;"></router-link>
             </div>

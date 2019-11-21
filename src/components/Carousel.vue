@@ -80,6 +80,10 @@ export default {
 	   filter: grayscale(50%);
     }
 }
+.carousel-inner{
+  height: 160px;
+  overflow: hidden;
+}
 .carousel-multi-item-2 .card img {
     border-radius: 2px; 
 }
@@ -89,6 +93,7 @@ export default {
     float: left;
     width: 25%;
     max-width: 100%; 
+    overflow: hidden;
     } 
 }
 

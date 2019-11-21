@@ -48,19 +48,19 @@ export const store = new Vuex.Store({
   },
   actions: {
     getStoryWomenData({commit}) {
-      let token = 'vzwC59CqmD9irvJTGSQVKAtt'
+      const token = 'YOUR_TOKEN';
       axios.get(`https://api.storyblok.com/v1/cdn/stories?version=draft&token=${token}&starts_with=women`).then(res => {        
       commit('GET_WOMEN', res.data.stories);
       })
     },
     getStoryMenData({commit}) {
-      let token = 'vzwC59CqmD9irvJTGSQVKAtt'
+      const token = 'YOUR_TOKEN';
       axios.get(`https://api.storyblok.com/v1/cdn/stories?version=draft&token=${token}&starts_with=men`).then(res => {        
       commit('GET_MEN', res.data.stories);
       })
     },
     getStoryKidsData({commit}) {
-      let token = 'vzwC59CqmD9irvJTGSQVKAtt'
+      const token = 'YOUR_TOKEN';
       axios.get(`https://api.storyblok.com/v1/cdn/stories?version=draft&token=${token}&starts_with=kids`).then(res => {        
       commit('GET_KIDS', res.data.stories);
       })
