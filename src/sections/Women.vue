@@ -32,12 +32,7 @@ let storyapi = new StoryblokClient({
 }) 
 export default {
   name: 'Women',
-  // data () {
-  //   return {
-  //     msg: 'Women Collections',
-  //     story: { }
-  //   }
-  // },
+
   computed: {
     storyData(){
       return this.$store.getters.allWomenData;
@@ -46,43 +41,6 @@ export default {
   mounted() {
     this.$store.dispatch('getStoryWomenData')
   }
-  // mounted() {
-  //     const token = 'vzwC59CqmD9irvJTGSQVKAtt';   
-  //     axios.get(`https://api.storyblok.com/v1/cdn/stories?version=draft&token=${token}&starts_with=women`).then(res => {        
-  //     console.log(res.data.stories);
-  //     this.story = res.data.stories;  
-  //   })
-  //  }
-  
-
-  //   created () {
-  //   window.storyblok.init({
-  //     accessToken: token
-  //   })
-  //   window.storyblok.on('change', () => {
-  //     this.getStory('women', 'draft')
-  //   })
-  //   window.storyblok.pingEditor(() => {
-  //     if (window.storyblok.isInEditor()) {
-  //       this.getStory.filter('women', 'draft')
-  //     } else {
-  //       this.getStory('women', 'draft')
-  //     }
-  //   })
-  // },
-  //   methods: {
-  //   getStory(slug, version) {
-  //     storyapi.get('cdn/stories/', {
-  //       version: 'draft',
-  //       starts_with: 'women/'
-  //     })
-  //     .then((response) => {
-  //       console.log(response.data.stories);
-        
-  //       this.story = response.data.stories
-  //     })
-  //   }
-  // }
 }
 </script>
 
