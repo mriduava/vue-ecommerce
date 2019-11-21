@@ -26,7 +26,7 @@
 import StoryblokClient from 'storyblok-js-client'
 import axios from "axios";
 import { log } from 'util';
-const token = 'vzwC59CqmD9irvJTGSQVKAtt';
+const token = 'YOUR_TOKEN';
 let storyapi = new StoryblokClient({
   accessToken: token
 }) 
